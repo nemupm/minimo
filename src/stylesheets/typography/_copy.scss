@@ -1,5 +1,9 @@
 p {
   margin: 0 0 1.5em;
+
+  &:last-child {
+    margin: 0;
+  }
 }
 
 cite,
@@ -10,33 +14,19 @@ i {
 }
 
 blockquote {
-  margin: 0 1.5em;
+  @include font-size($font-size__blockquote);
+  font-style: italic;
+
+  margin: 0 0 1.5em;
+  padding-left: 1em;
+  border-left: 0.2em solid $color__blockquote-border;
 }
 
 address {
   margin: 0 0 1.5em;
 }
 
-pre {
-  font-family: $font-family__code;
-  @include font-size($font-size__pre);
-  background: $color__black;
-  color: $color__white;
-
-  text-align: initial;
-  max-width: 100%;
-  padding: 1em 1.5em;
-  margin-bottom: 1.725em;
-  overflow: auto;
-  word-wrap: normal;
-}
-
-code,
-kbd,
-tt,
-var {
-  font-family: $font-family__code;
-}
+@import 'codes';
 
 abbr,
 acronym {

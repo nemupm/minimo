@@ -2,7 +2,7 @@
 <link rel='stylesheet' href='{{ print "/assets/css/" .Site.Data.assets.main.css | relURL  }}'>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-{{- if .Site.Params.settings.rtl -}}
+{{- if or ( .Site.Params.settings.rtl ) ( eq .Site.Language.LanguageDirection "rtl" ) -}}
   <link rel='stylesheet' href='{{ print "/assets/css/" .Site.Data.assets.rtl.css | relURL  }}'>
 {{- end -}}
 
